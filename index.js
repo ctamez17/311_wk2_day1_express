@@ -1,3 +1,9 @@
+// Matt: I struggled with this assignment. I've been stuck on this for a few weeks.
+// Main issues are:
+// (1) Verifying local "server" is running correctly without error - 'npm start'
+// (2) How and why "postman" is used, how to use correctly when using on different projects/ports
+// (3) 
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -13,12 +19,15 @@ app.get('/users', (req, res) => {
   return res.json(users);
 })
 
-//   * GET /users/1
+//  * GET /users/1
 app.get('/users/1', (req, res) => {
   console.log(req.body);
   return res.json(users[0]);
 })
 
+
+// Interferes with rest of code?
+// v ------------------------- v
 // * POST /users
 // app.post('/users', (req, res) => {
 //   let newUser = {
@@ -30,6 +39,7 @@ app.get('/users/1', (req, res) => {
 //   users.push(newUser);
 //   res.json(users);
 // }) 
+// ^ ------------------------- ^
 
 // * PUT /users/1
 app.put('/users/1', (req, res) => {
